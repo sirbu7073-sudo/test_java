@@ -1,4 +1,4 @@
-package org.example.utils.selinium;
+package org.example.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -12,14 +12,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SeleniumDriver {
-
     static public WebDriver getAutoLocalDriver() {
         WebDriverManager.chromedriver().setup(); // sets up ChromeDriver automatically
         return new ChromeDriver();
     }
 
-
-    public static WebDriver setLocalDriver() {
+    public static WebDriver getLocalDriver() {
         System.setProperty("webdriver.chrome.driver", "D:\\WebDriver\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
